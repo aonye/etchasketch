@@ -10,12 +10,29 @@ function createGrid(totalNodes, parentNodeClass) {
     const div = document.querySelector(parentNodeClass);
     for (let i = 1; i <=totalNodes; i++){
         const divChild = document.createElement('div');
-        divChild.classList.add('grid-item');
+        divChild.classList.add('grid-item', 'transitioned');
         divChild.textContent = i;
         div.append(divChild);
     }
 }
 
+const hover = document.querySelectorAll('.grid-item');
+console.log(hover);
+
+hover.forEach((node) => {
+    node.addEventListener('mouseenter', (element) => {
+        let x = Math.floor(Math.random() * 256);
+        let y = Math.floor(Math.random() * 256);
+        let z = Math.floor(Math.random() * 256);
+        let bgColor = "rgb(" + x + "," + y + "," + z + ")";
+        node.style.background = bgColor;
+        node.classList.remove('transitioned');
+    });
+    node.addEventListener('mouseleave', () => {
+        node.style.background = 'white';
+        node.classList.add('transitioned');
+    });
+});
 
 
 /*<div class="grid-container">
