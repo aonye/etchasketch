@@ -1,0 +1,17 @@
+.grid-container {
+    display: grid;
+    height: 500px;
+    width: 500px;
+    margin: auto;
+    position: center;
+    grid-template-columns: 1fr repeat(15, 1fr);
+    grid-template-rows: 1fr repeat(15, 1fr);
+}
+
+.grid-item {
+    color: purple;
+}
+
+.grid-item:hover {
+    background-color: purple;
+}
