@@ -1,10 +1,18 @@
+body {
+    background-color: black;
+}
+.centered {
+    position: relative;
+    left: 50%;
+    margin-top: 10px;
+    transform: translate(-50%, -50%);
+  }
 .grid-container {
     display: grid;
     height: 500px;
     width: 500px;
+    background-color: white;
     margin: auto;
-    grid-template-columns: 1fr repeat(15, 1fr);
-    grid-template-rows: 1fr repeat(15, 1fr);
 }
 
 .grid-item {
