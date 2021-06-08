@@ -6,12 +6,17 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="btns">
+  <h1>Etch-A-Sketch Art Fun<h1>
+  <h2>Clicking same button again turns cursor into an eraser</h2>
+    <div id="clearbtn">
         <button type="button" class="centered" id="clear">Clear and Change Grid Size</button>
-        <button type="button" id="gray">GrayScale</button>
-        <button type="button" id="rainbow">Rainbow</button>
+    <div>
+    <div id="colorbtns">
+        <button type="button" class="color" id="grayscale">GrayScale</button>
+        <button type="button" class="color" id="black">Black</button>   
+        <button type="button" class="color" id="rainbow">Rainbow</button>  
     </div>
-    <div id="container" class="grid-container"></div>
+    <div id="container"></div>
     <script type="application/javascript" src="./script.js"></script>
 </body>
 </html>
