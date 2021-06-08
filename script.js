@@ -5,7 +5,6 @@ let color = 'white'; //colors are all lowercase
 
 colorButtons.forEach(button => button.addEventListener('click', changeColor));
 
-
 createGrid(16);
 
 function createGrid(sideLength) {
@@ -95,8 +94,6 @@ function changeColor(event){
 function toggleClass(classCheck){
     container.classList.toggle(classCheck);
 }
-
-colorButtons.forEach(button => button.addEventListener('click', changeColor));
 
 document.getElementById('clear').addEventListener('click',(event) => {
     if (event.target.id==='clear') {
