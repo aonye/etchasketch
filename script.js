@@ -57,13 +57,24 @@ function setColorEffect(){ //consolidate all color options instead of individual
     else if (color==='grayscale'){
         let currentColor = this.style.backgroundColor;
         currentColor = currentColor.split(' ');
-        let re = /[0-9]+/g
-        let x = Math.floor(parseInt(currentColor[0].match(re)) * 0.9);
-        let y = Math.floor(parseInt(currentColor[1].match(re)) * 0.9);
-        let z = Math.floor(parseInt(currentColor[2].match(re)) * 0.9);
+        console.log(currentColor);
+        let re = /\d+\.?(\d+)?/ //matches all decimals or integers
+        let x = parseFloat(currentColor[0].match(re)) - 25.5; //10% of 255;
+        let y = parseFloat(currentColor[1].match(re)) - 25.5;
+        let z = parseFloat(currentColor[2].match(re)) - 25.5;
+        if (x < 0){
+            x=0;
+        }
+        if(y < 0){
+            y=0;
+        }
+        if(z < 0){
+            z=0;
+        }
         //console.log(x, y, z); //color check
         let bgColor = "rgb(" + x + "," + y + "," + z + ")";
         this.setAttribute('style', 'background-color: ' + bgColor);
+        //attribute doesn't take decimals for rgb, it rounds.
     }
     else {
         console.log('fatal error');
@@ -73,7 +84,7 @@ function setColorEffect(){ //consolidate all color options instead of individual
 }
 
 function changeColor(event){
-    console.log(event.target.id);
+    //console.log(event.target.id);
     if (color===event.target.id){
         color = 'white';
     }

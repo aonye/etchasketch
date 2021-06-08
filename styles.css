@@ -25,9 +25,5 @@ body {
 }
 .grid-item {
     color: black;
-}
-
-.transitioned {
-    transition-delay: 2s;
-    transition-duration: 1s;
+    transition-duration: 0.30s;
 }
